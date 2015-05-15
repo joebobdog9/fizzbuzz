@@ -85,14 +85,37 @@ console.assert(GCD(50,20) === 10);
 //  * write a function that prints out the Least Common Multiple of two numbers
 //  */
 
-// function LCM(a, b){
-//     // YOUR CODE HERE
-// }
+function LCM(a, b){
+    // YOUR CODE HERE
+    var _a = []
+    var _b = []
 
-// console.assert(LCM(10,10) === 10)
-// console.assert(LCM(2,5) === 10)
-// console.assert(LCM(3,6) === 6)
-// console.assert(LCM(0,1) === 1)
+    for(var i = Math.max(a,b); i > 0; i--) {
+    	if(a%i === 0){
+    		_a.push(a*i)
+    	}
+    	if(b%i === 0){
+    		_b.push(b*i)
+    	}
+    }
+
+    console.log(_a, _b)
+
+
+    var lcm = 0
+    _a.forEach(function(value){
+    	if(_b.indexOf(value) !== -1){
+    		lcm = value
+    	}
+    })
+
+    return lcm
+}}
+
+console.assert(LCM(10,10) === 10)
+console.assert(LCM(2,5) === 10)
+console.assert(LCM(3,6) === 6)
+console.assert(LCM(0,1) === 1)
 
 // /**
 //  * Part 4
@@ -104,12 +127,24 @@ console.assert(GCD(50,20) === 10);
 //  * - for every number that is a multiple of 3 and 5, return "fizzbuzz"
 //  */
 
-// function fizzbuzz(N){
+function fizzbuzz(N){
 //     // YOUR CODE HERE
-// }
+for (var i = 1; i <= 100; i++) {
+    var string = ''; }
+      if (i % 3 == 0) {
+        string += 'Fizz';
+    }
+    if (i % 5 == 0) {
+        string += 'Buzz';
+    }
+    if (string == '') {
+        string += i;
+    }
 
-// console.assert(fizzbuzz(1) === ".")
-// console.assert(fizzbuzz(2) === "..")
-// console.assert(fizzbuzz(3) === "..fizz")
-// console.assert(fizzbuzz(5) === "..fizz.buzz")
-// console.assert(fizzbuzz(10) === "..fizz.buzzfizz..fizzfizzbuzz")
+
+
+console.assert(fizzbuzz(1) === ".")
+console.assert(fizzbuzz(2) === "..")
+console.assert(fizzbuzz(3) === "..fizz")
+console.assert(fizzbuzz(5) === "..fizz.buzz")
+console.assert(fizzbuzz(10) === "..fizz.buzzfizz..fizzfizzbuzz")
